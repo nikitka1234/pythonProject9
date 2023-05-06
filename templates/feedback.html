@@ -34,4 +34,17 @@
         </div>
         {{ form.submit(class="btn btn-primary btn-lg") }}
     </form>
+    <p></p>
+    {% for feedback in feedback_list %}
+        <div class="card mb-3">
+            <!--<img src="https://via.placeholder.com/800x400.png?text=News+image" class="card-img-top" alt="...">-->
+            <div class="card-body">
+                <h5 class="card-title">{{ feedback.name }}</h5>
+                <p class="card-text">{{ feedback.text|truncate(100) }}</p>
+            </div>
+            <div class="card-footer">
+                <p>Оценка: {{ feedback.rating }}/5</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
